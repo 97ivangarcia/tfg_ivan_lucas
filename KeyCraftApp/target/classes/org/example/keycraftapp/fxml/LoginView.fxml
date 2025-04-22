@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.keycraftapp.fxml.LoginView"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.keycraftapp.view.controller.LoginViewController"
+      alignment="CENTER" spacing="12" padding="20">
+    <Label text="KeyCraft – Iniciar sesión" style="-fx-font-size: 18px;"/>
+    <TextField fx:id="emailField" promptText="Correo electrónico"/>
+    <PasswordField fx:id="passwordField" promptText="Contraseña"/>
+    <Label fx:id="errorLabel" textFill="red"/>
+    <Button text="Entrar" onAction="#onLogin"/>
+</VBox>
