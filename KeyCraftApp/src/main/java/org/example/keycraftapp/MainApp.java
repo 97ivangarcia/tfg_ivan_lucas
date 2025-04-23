@@ -11,7 +11,8 @@ import java.io.IOException;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/keycraftapp/view/controller/LoginView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/keycraftapp/fxml/LoginView.fxml"));
+
         Parent root = fxmlLoader.load();
 
         Scene scene = new Scene(root);
@@ -19,6 +20,7 @@ public class MainApp extends Application {
         stage.setTitle("Iniciar sesión");
         stage.show();
     }
+
 
     public static void main(String[] args) {
         launch();

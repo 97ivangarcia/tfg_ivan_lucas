@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.*?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.keycraftapp.view.controller.LoginViewController"
-      alignment="CENTER" spacing="12" padding="20">
-    <Label text="KeyCraft – Iniciar sesión" style="-fx-font-size: 18px;"/>
-    <TextField fx:id="emailField" promptText="Correo electrónico"/>
-    <PasswordField fx:id="passwordField" promptText="Contraseña"/>
-    <Label fx:id="errorLabel" textFill="red"/>
-    <Button text="Entrar" onAction="#onLogin"/>
-</VBox>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.keycraftapp.view.controller.LoginViewController">
+    <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
+        <!-- Campo de correo -->
+        <TextField fx:id="emailField" promptText="Email" />
+
+        <!-- Campo de contraseña -->
+        <PasswordField fx:id="passwordField" promptText="Contraseña" />
+
+        <!-- Etiqueta para mostrar errores -->
+        <Label fx:id="errorLabel" style="-fx-text-fill: red;" />
+
+        <!-- Botón de login -->
+        <HBox spacing="10">
+            <Button text="Iniciar sesión" onAction="#onLogin"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
