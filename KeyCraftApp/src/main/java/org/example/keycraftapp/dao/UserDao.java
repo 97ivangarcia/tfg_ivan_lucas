@@ -24,7 +24,7 @@ public class UserDao {
         return user;
     }
 
-    public void save(User user) {
+    public boolean save(User user) {
         Transaction tx = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
@@ -34,6 +34,7 @@ public class UserDao {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         }
+        return false;
     }
 
     public List<User> findAll() {
@@ -44,5 +45,9 @@ public class UserDao {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public User findByEmail(String email) {
+        return null;
     }
 }

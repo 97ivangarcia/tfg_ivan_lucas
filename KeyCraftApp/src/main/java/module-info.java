@@ -21,6 +21,7 @@ module org.example.keycraftapp {
     /* ── JDBC (driver MySQL) ────────────────── */
     requires java.sql;
     requires org.slf4j;
+    requires java.desktop;
 
     /* ── JNDI (si lo necesitas) ────────────────── */
     //requires java.naming;  // Esto es solo si realmente necesitas JNDI.
