@@ -4,33 +4,28 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-
-        <!-- Database connection configuration -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <!-- Ensure that the 'keycraft' database exists on your MySQL server -->
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/keycraft</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.password"/>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8DialectDialect</property>
 
-        <!-- MySQL dialect for Hibernate (adjust based on MySQL version) -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <!-- Cambiar a update para mantener datos existentes -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
 
-        <!-- Schema generation strategy -->
-        <property name="hibernate.hbm2ddl.auto">update
-        </property> <!-- Options: update, create, create-drop, validate, none -->
-        <property name="show_sql">true</property> <!-- Show SQL queries in console for debugging -->
+        <!-- Habilitar formateo del SQL para mejor legibilidad -->
+        <property name="hibernate.format_sql">true</property>
 
-        <!-- Entity mappings (order matters: referenced tables should be mapped first) -->
-        <mapping class="org.example.keycraftapp.entities.User"/> <!-- Maps the 'User' entity -->
-        <mapping class="org.example.keycraftapp.entities.Component"/> <!-- Maps the 'Component' entity -->
-        <mapping class="org.example.keycraftapp.entities.Type"/> <!-- Maps the 'Socio' Type -->
-        <mapping class="org.example.keycraftapp.entities.Casing"/> <!-- Maps the 'Casing' entity -->
-        <mapping class="org.example.keycraftapp.entities.Keycaps"/> <!-- Maps the 'Keycaps' entity -->
-        <mapping class="org.example.keycraftapp.entities.PCB"/> <!-- Maps the 'PCB' entity -->
-        <mapping class="org.example.keycraftapp.entities.Plate"/> <!-- Maps the 'Plate' entity -->
-        <mapping class="org.example.keycraftapp.entities.Switch"/> <!-- Maps the 'Switch' entity -->
-        <mapping class="org.example.keycraftapp.entities.Payment"/> <!-- Maps the 'Payment' entity -->
-
-
+        <mapping class="org.example.keycraftapp.entities.User"/>
+        <!-- Entidades no necesarias para el login, comentadas -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Component"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Type"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Casing"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Keycaps"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.PCB"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Plate"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Switch"/> -->
+        <!-- <mapping class="org.example.keycraftapp.entities.Payment"/> -->
     </session-factory>
 </hibernate-configuration>
